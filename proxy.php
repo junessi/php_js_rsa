@@ -98,8 +98,10 @@ if(isset($_POST['ciphertext']))
 <form name="rsatest" method="post">
 	URL:
 	<input name="url" value="<?=empty($decrypted_data)?'':$decrypted_data ?>" />
-	<input type="button" value="GO" onClick="submit_url();" /><br>
-	<textarea name="enc_data" rows="8" cols="64"><?=empty($encrypted_data)?'':bin2hex($encrypted_data) ?></textarea><br>
+	<input type="button" value="GO" onClick="submit_url();" /><br><br>
+	The encrypted data returned by the serevr:<br>
+	<textarea name="enc_data" rows="8" cols="64"><?=empty($encrypted_data)?'':bin2hex($encrypted_data) ?></textarea><br><br>
+	Click "decrypt" to show the plain message from the server:<br>
 	<textarea name="dec_data" rows="8" cols="64"></textarea><br>
 	<input type="button" value="decrypt" onclick="javascript:decrypt_url();" />
 	<input type="button" value="generate key" onclick="javascript:jsbn_generate_rsa(document.user_key.e.value, document.user_key.bits.value);" />
